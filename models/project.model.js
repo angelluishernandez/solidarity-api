@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const categories = ["Health", "Sports", "Elderly care", "Community", "Food"]
+
 const projectSchema = new mongoose.Schema(
 	{
 		title: {
@@ -8,7 +10,7 @@ const projectSchema = new mongoose.Schema(
 		},
 		category: {
 			type: String,
-			unique: true,
+			enum: categories, 
 			required: true,
 		},
 		image: String,

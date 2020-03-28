@@ -61,10 +61,10 @@ module.exports.projectDetails = (req, res, next) => {
 // Delete project
 
 module.exports.deleteProject = (req, res, next) => {
-	Project.findById(req.params.id)
+	Project.findByIdAndDelete(req.params.id)
 		.then(project => {
-			console.log(`The project ${project.name} has been deleted`);
-			res.json(`The project ${project.name} has been deleted`);
+			console.log(`The project ${project.title} has been deleted`);
+			res.json(`The project ${project.title} has been deleted`);
 		})
 		.catch(error => console.log(error));
 };
